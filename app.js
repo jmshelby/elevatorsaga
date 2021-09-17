@@ -7,7 +7,7 @@ var createEditor = function() {
         indentUnit: 4,
         indentWithTabs: false,
         theme: "solarized light",
-        mode: "javascript",
+        mode: "clojure",
         autoCloseBrackets: true,
         extraKeys: {
             // the following Tab key mapping is from http://codemirror.net/doc/manual.html#keymaps
