@@ -89,12 +89,15 @@
 
     <script type="text/plain" id="default-elev-implementation">
 {
-    :init (fn [elevators floors]
-           (let [e (aget elevators 0) ]
-             (. e on "idle"
-               (fn [] (. e goToFloor 0)
-                      (. e goToFloor 1)))))
-    :update (fn [dt, elevators, floors])
+     :init (fn [[e1 & _] floors]
+       ;; Whenever the elevator is idle (has no more queued destinations) ...
+       (.on e1 "idle"
+         ;; let's go to all the floors (or did we forget one?)
+         #(do (.goToFloor e1 0)
+              (.goToFloor e1 1))))
+     :update (fn [dt, elevators, floors]
+               ;; We normally don't need to do anything here
+               )
 }
     </script>
 
