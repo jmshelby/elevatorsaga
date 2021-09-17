@@ -1,0 +1,1 @@
+{:browser-repl true, :output-dir "libs/clojurescript", :main elevator.core, :output-to "libs/clojurescript/main.js", :aot-cache true}
